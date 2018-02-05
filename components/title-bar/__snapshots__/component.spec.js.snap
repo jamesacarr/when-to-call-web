@@ -2,16 +2,9 @@
 
 exports[`<TitleBar/> .handleChange updates the value of the input 1`] = `
 <WithStyles(AppBar)
-  className="root"
   position="static"
 >
   <WithStyles(Toolbar)>
-    <WithStyles(Typography)
-      color="inherit"
-      type="title"
-    >
-      When To Call
-    </WithStyles(Typography)>
     <div
       className="wrapper"
     >
@@ -33,16 +26,9 @@ exports[`<TitleBar/> .handleChange updates the value of the input 1`] = `
 
 exports[`<TitleBar/> .render renders correctly 1`] = `
 <WithStyles(AppBar)
-  className="root"
   position="static"
 >
   <WithStyles(Toolbar)>
-    <WithStyles(Typography)
-      color="inherit"
-      type="title"
-    >
-      When To Call
-    </WithStyles(Typography)>
     <div
       className="wrapper"
     >

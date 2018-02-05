@@ -5,6 +5,9 @@ exports[`<AppWrapper/> .render renders correctly 1`] = `
   <WithStyles(TitleBar)
     onSearchChange={[Function]}
   />
+  <WithStyles(ResultList)
+    results={Array []}
+  />
   <div>
     Test
   </div>

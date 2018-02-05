@@ -1,9 +1,6 @@
 import { fade } from 'material-ui/styles/colorManipulator';
 
 export default theme => ({
-  root: {
-    marginBottom: theme.spacing.unit * 2
-  },
   wrapper: {
     display: 'flex',
     width: '50%',
@@ -30,6 +27,9 @@ export default theme => ({
     '& *:-ms-input-placeholder': {
       color: '#fff'
     }
+  },
+  title: {
+    float: 'left'
   },
   search: {
     width: theme.spacing.unit * 9,

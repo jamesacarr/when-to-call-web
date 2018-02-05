@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 import SearchIcon from 'material-ui-icons/Search';
 import debounce from 'debounce';
 
@@ -31,11 +30,8 @@ class TitleBar extends Component {
     const { value } = this.state;
 
     return (
-      <AppBar position="static" className={classes.root}>
+      <AppBar position="static">
         <Toolbar>
-          <Typography type="title" color="inherit">
-            When To Call
-          </Typography>
           <div className={classes.wrapper}>
             <div className={classes.search}>
               <SearchIcon/>
