@@ -42,6 +42,7 @@ export default class ExtendedDocument extends Document {
           <link rel="shortcut icon" href="/static/assets/favicon.ico"/>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+          <script type="text/javascript" src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`}/>
         </Head>
         <body>
           <Main/>

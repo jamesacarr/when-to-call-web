@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TitleBar/> .handleChange updates the value of the input 1`] = `
+<WithStyles(AppBar)
+  className="root"
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(Typography)
+      color="inherit"
+      type="title"
+    >
+      When To Call
+    </WithStyles(Typography)>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="search"
+      >
+        <pure(Search) />
+      </div>
+      <input
+        className="input"
+        onChange={[Function]}
+        placeholder="Search for business"
+        value="abc"
+      />
+    </div>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
+
+exports[`<TitleBar/> .render renders correctly 1`] = `
+<WithStyles(AppBar)
+  className="root"
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(Typography)
+      color="inherit"
+      type="title"
+    >
+      When To Call
+    </WithStyles(Typography)>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="search"
+      >
+        <pure(Search) />
+      </div>
+      <input
+        className="input"
+        onChange={[Function]}
+        placeholder="Search for business"
+        value=""
+      />
+    </div>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
