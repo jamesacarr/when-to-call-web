@@ -8,5 +8,8 @@ exports[`<IndexContainer/> .render renders correctly 1`] = `
   <WithStyles(ResultList)
     results={Array []}
   />
+  <WithStyles(ResultContainer)
+    result={null}
+  />
 </div>
 `;

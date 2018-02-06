@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultContainer/> renders correctly 1`] = `
+<WithStyles(GridWrapper)
+  className="root"
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    xs={12}
+  >
+    <WithStyles(MapContainer)
+      onLoad={[Function]}
+      result={
+        Object {
+          "test": "stuff",
+        }
+      }
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import autocomplete from '../../lib/autocomplete';
+import GoogleService from '../../lib/google-service';
+import mockPromise from '../../test/mock-promise';
 import IndexContainer from './component';
 
-jest.mock('../../lib/autocomplete.js', () => jest.fn(() => Promise.resolve([{ id: 'a' }, { id: 'b' }])));
+jest.mock('../../lib/google-service');
 
 describe('<IndexContainer/>', () => {
   describe('.render', () => {
@@ -15,20 +16,32 @@ describe('<IndexContainer/>', () => {
   });
 
   describe('.search', () => {
+    let promise;
+
+    beforeEach(() => {
+      promise = mockPromise();
+      GoogleService.autocomplete = promise;
+    });
+
     it('calls autocomplete', () => {
       const wrapper = shallow(<IndexContainer><div>Test</div></IndexContainer>);
       const instance = wrapper.instance();
       instance.search('test');
 
-      expect(autocomplete).toHaveBeenCalledWith('test');
+      expect(GoogleService.autocomplete).toHaveBeenCalledWith('test');
     });
 
     it('sets state when autocomplete resolve', async () => {
+      const results = [{ id: 'a' }, { id: 'b' }];
+
       const wrapper = shallow(<IndexContainer><div>Test</div></IndexContainer>);
       const instance = wrapper.instance();
-      await instance.search('test');
+      const promise = instance.search('test');
 
-      expect(wrapper.state('results')).toEqual([{ id: 'a' }, { id: 'b' }]);
+      GoogleService.autocomplete.resolve(results);
+      await promise;
+
+      expect(wrapper.state('results')).toEqual(results);
     });
   });
 });
