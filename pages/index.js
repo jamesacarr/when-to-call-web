@@ -1,11 +1,10 @@
 import React from 'react';
 
 import withRoot from '../components/with-root';
+import IndexContainer from '../components/index-container';
 
 const Index = () => (
-  <div>
-    Hello World
-  </div>
+  <IndexContainer/>
 );
 
 export default withRoot(Index);

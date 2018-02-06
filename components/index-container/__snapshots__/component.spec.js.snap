@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IndexContainer/> .render renders correctly 1`] = `
+<div>
+  <WithStyles(TitleBar)
+    onSearchChange={[Function]}
+  />
+  <WithStyles(ResultList)
+    results={Array []}
+  />
+</div>
+`;
