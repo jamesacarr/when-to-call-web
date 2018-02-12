@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmptyRow/> renders correctly 1`] = `
+<WithStyles(ListItem)
+  dense={true}
+>
+  <WithStyles(ListItemText)
+    primary="No Results"
+  />
+</WithStyles(ListItem)>
+`;

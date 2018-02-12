@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ResultList/> .render renders correctly with result 1`] = `
+exports[`<ResultList/> renders empty state when no results 1`] = `
+<WithStyles(Paper)
+  className="root"
+>
+  <WithStyles(List)>
+    <EmptyRow />
+  </WithStyles(List)>
+</WithStyles(Paper)>
+`;
+
+exports[`<ResultList/> renders null when loading 1`] = `""`;
+
+exports[`<ResultList/> renders null when visible false 1`] = `""`;
+
+exports[`<ResultList/> renders results when visible and not loading 1`] = `
 <WithStyles(Paper)
   className="root"
 >
@@ -41,5 +55,3 @@ exports[`<ResultList/> .render renders correctly with result 1`] = `
   </WithStyles(List)>
 </WithStyles(Paper)>
 `;
-
-exports[`<ResultList/> .render renders null with empty results 1`] = `""`;

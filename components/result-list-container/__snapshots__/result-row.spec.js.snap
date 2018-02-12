@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ResultRow/> .render renders correctly 1`] = `
+exports[`<ResultRow/> renders correctly 1`] = `
 <WithStyles(ListItem)
   button={true}
   dense={true}
@@ -13,7 +13,7 @@ exports[`<ResultRow/> .render renders correctly 1`] = `
 </WithStyles(ListItem)>
 `;
 
-exports[`<ResultRow/> .render renders with divider 1`] = `
+exports[`<ResultRow/> renders with divider 1`] = `
 <WithStyles(ListItem)
   button={true}
   dense={true}

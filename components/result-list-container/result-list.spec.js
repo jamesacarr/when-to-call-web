@@ -15,15 +15,23 @@ const classes = {
 };
 
 describe('<ResultList/>', () => {
-  describe('.render', () => {
-    it('renders correctly with result', () => {
-      const wrapper = shallow(<ResultList classes={classes} results={results}/>);
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('renders null when visible false', () => {
+    const wrapper = shallow(<ResultList classes={classes} results={results} loading={false} visible={false}/>);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-    it('renders null with empty results', () => {
-      const wrapper = shallow(<ResultList classes={classes} results={[]}/>);
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('renders null when loading', () => {
+    const wrapper = shallow(<ResultList classes={classes} loading visible/>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders results when visible and not loading', () => {
+    const wrapper = shallow(<ResultList classes={classes} results={results} loading={false} visible/>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders empty state when no results', () => {
+    const wrapper = shallow(<ResultList classes={classes} results={[]} loading={false} visible/>);
+    expect(wrapper).toMatchSnapshot();
   });
 });

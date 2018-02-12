@@ -2,9 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TitleBar from './title-bar';
 
-// Need to mock out timers here to handle debounce
-jest.useFakeTimers();
-
 describe('<TitleBar/>', () => {
   describe('.render', () => {
     it('renders correctly', () => {
@@ -15,8 +12,9 @@ describe('<TitleBar/>', () => {
         input: 'input'
       };
       const query = () => {};
+      const setVisible = () => {};
 
-      const wrapper = shallow(<TitleBar classes={classes} query={query}/>);
+      const wrapper = shallow(<TitleBar classes={classes} query={query} setVisible={setVisible}/>);
       expect(wrapper).toMatchSnapshot();
     });
   });
@@ -24,6 +22,7 @@ describe('<TitleBar/>', () => {
   describe('.handleChange', () => {
     let wrapper;
     let query;
+    let setVisible;
 
     beforeEach(() => {
       const classes = {
@@ -33,8 +32,9 @@ describe('<TitleBar/>', () => {
         input: 'input'
       };
       query = jest.fn();
+      setVisible = jest.fn();
 
-      wrapper = shallow(<TitleBar classes={classes} query={query}/>);
+      wrapper = shallow(<TitleBar classes={classes} query={query} setVisible={setVisible}/>);
     });
 
     it('sets state value', () => {
@@ -42,9 +42,18 @@ describe('<TitleBar/>', () => {
       expect(wrapper.state('value')).toEqual('abc');
     });
 
+    it('calls setVisible with true when value', () => {
+      wrapper.instance().handleChange({ target: { value: 'abc' } });
+      expect(setVisible).toHaveBeenCalledWith(true);
+    });
+
+    it('calls setVisible with false when no value', () => {
+      wrapper.instance().handleChange({ target: { value: '' } });
+      expect(setVisible).toHaveBeenCalledWith(false);
+    });
+
     it('calls query', () => {
       wrapper.instance().handleChange({ target: { value: 'abc' } });
-      jest.runAllTimers(); // Make sure debounced function is called
       expect(query).toHaveBeenCalledWith('abc');
     });
 

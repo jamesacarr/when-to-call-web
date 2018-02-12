@@ -10,15 +10,13 @@ const result = {
 };
 
 describe('<ResultRow/>', () => {
-  describe('.render', () => {
-    it('renders correctly', () => {
-      const wrapper = shallow(<ResultRow result={result}/>);
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const wrapper = shallow(<ResultRow result={result}/>);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-    it('renders with divider', () => {
-      const wrapper = shallow(<ResultRow divider result={result}/>);
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('renders with divider', () => {
+    const wrapper = shallow(<ResultRow divider result={result}/>);
+    expect(wrapper).toMatchSnapshot();
   });
 });

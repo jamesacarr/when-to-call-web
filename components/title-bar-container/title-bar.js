@@ -7,7 +7,8 @@ import SearchIcon from 'material-ui-icons/Search';
 class TitleBar extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    query: PropTypes.func.isRequired
+    query: PropTypes.func.isRequired,
+    setVisible: PropTypes.func.isRequired
   }
 
   state = {
@@ -15,7 +16,12 @@ class TitleBar extends Component {
   }
 
   handleChange = ({ target: { value } }) => {
-    this.setState({ value }, () => this.props.query(value));
+    const { query, setVisible } = this.props;
+
+    this.setState({ value }, () => {
+      setVisible(Boolean(value));
+      query(value);
+    });
   }
 
   render() {
