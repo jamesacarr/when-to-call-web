@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultRow/> .render renders correctly 1`] = `
+<WithStyles(ListItem)
+  button={true}
+  dense={true}
+  divider={false}
+>
+  <WithStyles(ListItemText)
+    primary="Some stuff"
+    secondary="More stuff"
+  />
+</WithStyles(ListItem)>
+`;
+
+exports[`<ResultRow/> .render renders with divider 1`] = `
+<WithStyles(ListItem)
+  button={true}
+  dense={true}
+  divider={true}
+>
+  <WithStyles(ListItemText)
+    primary="Some stuff"
+    secondary="More stuff"
+  />
+</WithStyles(ListItem)>
+`;

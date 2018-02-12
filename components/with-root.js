@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import { MuiThemeProvider } from 'material-ui/styles';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-
+import store from '../lib/store';
 import getContext from '../styles/get-context';
-import AppWrapper from './app-wrapper';
+import AppContainer from './app-container';
 
 export default BaseComponent => {
   class WithRoot extends Component {
@@ -29,11 +30,13 @@ export default BaseComponent => {
 
     render() {
       return (
-        <MuiThemeProvider theme={this.styleContext.theme} sheetsManager={this.styleContext.sheetsManager}>
-          <AppWrapper>
-            <BaseComponent {...this.props}/>
-          </AppWrapper>
-        </MuiThemeProvider>
+        <Provider store={store}>
+          <MuiThemeProvider theme={this.styleContext.theme} sheetsManager={this.styleContext.sheetsManager}>
+            <AppContainer>
+              <BaseComponent {...this.props}/>
+            </AppContainer>
+          </MuiThemeProvider>
+        </Provider>
       );
     }
   }

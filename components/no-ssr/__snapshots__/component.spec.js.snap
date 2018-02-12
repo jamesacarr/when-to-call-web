@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`</NoSSR> renders empty when canRender false 1`] = `""`;
+
+exports[`</NoSSR> renders renders children when canRender true 1`] = `
+<div>
+  Test
+</div>
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultList/> .render renders correctly with result 1`] = `
+<WithStyles(Paper)
+  className="root"
+>
+  <WithStyles(List)>
+    <ResultRow
+      divider={true}
+      key="123"
+      result={
+        Object {
+          "id": "123",
+          "primary": "1",
+          "secondary": "23",
+        }
+      }
+    />
+    <ResultRow
+      divider={true}
+      key="456"
+      result={
+        Object {
+          "id": "456",
+          "primary": "4",
+          "secondary": "56",
+        }
+      }
+    />
+    <ResultRow
+      divider={false}
+      key="789"
+      result={
+        Object {
+          "id": "789",
+          "primary": "7",
+          "secondary": "89",
+        }
+      }
+    />
+  </WithStyles(List)>
+</WithStyles(Paper)>
+`;
+
+exports[`<ResultList/> .render renders null with empty results 1`] = `""`;

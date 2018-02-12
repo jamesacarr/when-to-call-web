@@ -1,10 +1,14 @@
 import React from 'react';
 
 import withRoot from '../components/with-root';
-import IndexContainer from '../components/index-container';
+import ResultListContainer from '../components/result-list-container';
+import TitleBarContainer from '../components/title-bar-container';
 
 const Index = () => (
-  <IndexContainer/>
+  <div>
+    <TitleBarContainer/>
+    <ResultListContainer/>
+  </div>
 );
 
 export default withRoot(Index);
