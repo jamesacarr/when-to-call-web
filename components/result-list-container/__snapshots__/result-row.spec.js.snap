@@ -5,6 +5,7 @@ exports[`<ResultRow/> renders correctly 1`] = `
   button={true}
   dense={true}
   divider={false}
+  onClick={[Function]}
 >
   <WithStyles(ListItemText)
     primary="Some stuff"
@@ -18,6 +19,7 @@ exports[`<ResultRow/> renders with divider 1`] = `
   button={true}
   dense={true}
   divider={true}
+  onClick={[Function]}
 >
   <WithStyles(ListItemText)
     primary="Some stuff"

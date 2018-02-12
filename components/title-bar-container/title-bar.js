@@ -9,26 +9,20 @@ class TitleBar extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired,
-    query: PropTypes.func.isRequired,
+    performQuery: PropTypes.func.isRequired,
+    query: PropTypes.string.isRequired,
     setVisible: PropTypes.func.isRequired
   }
 
-  state = {
-    value: ''
-  }
-
   handleChange = ({ target: { value } }) => {
-    const { query, setVisible } = this.props;
+    const { performQuery, setVisible } = this.props;
 
-    this.setState({ value }, () => {
-      setVisible(Boolean(value));
-      query(value);
-    });
+    setVisible(Boolean(value));
+    performQuery(value);
   }
 
   render() {
-    const { classes, loading } = this.props;
-    const { value } = this.state;
+    const { classes, loading, query } = this.props;
 
     return (
       <AppBar position="static">
@@ -37,7 +31,7 @@ class TitleBar extends Component {
             <div className={classes.search}>
               <SearchIcon/>
             </div>
-            <input placeholder="Search for business" className={classes.input} value={value} onChange={this.handleChange}/>
+            <input placeholder="Search for business" className={classes.input} value={query} onChange={this.handleChange}/>
             {loading && (
               <div className={classes.loading}>
                 <CircularProgress color="inherit" size={25}/>

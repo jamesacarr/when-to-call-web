@@ -8,15 +8,16 @@ const result = {
   primary: 'Some stuff',
   secondary: 'More stuff'
 };
+const onClick = () => {};
 
 describe('<ResultRow/>', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<ResultRow result={result}/>);
+    const wrapper = shallow(<ResultRow result={result} onClick={onClick}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders with divider', () => {
-    const wrapper = shallow(<ResultRow divider result={result}/>);
+    const wrapper = shallow(<ResultRow divider result={result} onClick={onClick}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });

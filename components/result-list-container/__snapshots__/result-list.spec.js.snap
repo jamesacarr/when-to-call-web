@@ -22,6 +22,7 @@ exports[`<ResultList/> renders results when visible and not loading 1`] = `
     <ResultRow
       divider={true}
       key="123"
+      onClick={[Function]}
       result={
         Object {
           "id": "123",
@@ -33,6 +34,7 @@ exports[`<ResultList/> renders results when visible and not loading 1`] = `
     <ResultRow
       divider={true}
       key="456"
+      onClick={[Function]}
       result={
         Object {
           "id": "456",
@@ -44,6 +46,7 @@ exports[`<ResultList/> renders results when visible and not loading 1`] = `
     <ResultRow
       divider={false}
       key="789"
+      onClick={[Function]}
       result={
         Object {
           "id": "789",

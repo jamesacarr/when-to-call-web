@@ -11,10 +11,10 @@ describe('<TitleBar/>', () => {
         search: 'search',
         input: 'input'
       };
-      const query = () => {};
+      const performQuery = () => {};
       const setVisible = () => {};
 
-      const wrapper = shallow(<TitleBar classes={classes} loading={false} query={query} setVisible={setVisible}/>);
+      const wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading={false}/>);
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -25,17 +25,31 @@ describe('<TitleBar/>', () => {
         search: 'search',
         input: 'input'
       };
-      const query = () => {};
+      const performQuery = () => {};
       const setVisible = () => {};
 
-      const wrapper = shallow(<TitleBar classes={classes} loading query={query} setVisible={setVisible}/>);
+      const wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading/>);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when supplied query', () => {
+      const classes = {
+        root: 'root',
+        wrapper: 'wrapper',
+        search: 'search',
+        input: 'input'
+      };
+      const performQuery = () => {};
+      const setVisible = () => {};
+
+      const wrapper = shallow(<TitleBar classes={classes} query="testing" performQuery={performQuery} setVisible={setVisible} loading/>);
       expect(wrapper).toMatchSnapshot();
     });
   });
 
   describe('.handleChange', () => {
     let wrapper;
-    let query;
+    let performQuery;
     let setVisible;
 
     beforeEach(() => {
@@ -45,15 +59,10 @@ describe('<TitleBar/>', () => {
         search: 'search',
         input: 'input'
       };
-      query = jest.fn();
+      performQuery = jest.fn();
       setVisible = jest.fn();
 
-      wrapper = shallow(<TitleBar classes={classes} loading={false} query={query} setVisible={setVisible}/>);
-    });
-
-    it('sets state value', () => {
-      wrapper.instance().handleChange({ target: { value: 'abc' } });
-      expect(wrapper.state('value')).toEqual('abc');
+      wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading={false}/>);
     });
 
     it('calls setVisible with true when value', () => {
@@ -66,15 +75,9 @@ describe('<TitleBar/>', () => {
       expect(setVisible).toHaveBeenCalledWith(false);
     });
 
-    it('calls query', () => {
+    it('calls performQuery', () => {
       wrapper.instance().handleChange({ target: { value: 'abc' } });
-      expect(query).toHaveBeenCalledWith('abc');
-    });
-
-    it('updates the value of the input', () => {
-      wrapper.instance().handleChange({ target: { value: 'abc' } });
-      wrapper.update();
-      expect(wrapper).toMatchSnapshot();
+      expect(performQuery).toHaveBeenCalledWith('abc');
     });
   });
 });
