@@ -24,7 +24,37 @@ exports[`<TitleBar/> .handleChange updates the value of the input 1`] = `
 </WithStyles(AppBar)>
 `;
 
-exports[`<TitleBar/> .render renders correctly 1`] = `
+exports[`<TitleBar/> .render renders correctly when loading 1`] = `
+<WithStyles(AppBar)
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="search"
+      >
+        <pure(Search) />
+      </div>
+      <input
+        className="input"
+        onChange={[Function]}
+        placeholder="Search for business"
+        value=""
+      />
+      <div>
+        <WithStyles(CircularProgress)
+          color="inherit"
+          size={25}
+        />
+      </div>
+    </div>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
+
+exports[`<TitleBar/> .render renders correctly when not loading 1`] = `
 <WithStyles(AppBar)
   position="static"
 >

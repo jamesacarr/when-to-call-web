@@ -33,6 +33,7 @@ export default theme => ({
   },
   search: {
     width: theme.spacing.unit * 9,
+    color: theme.palette.common.white,
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -40,9 +41,19 @@ export default theme => ({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  loading: {
+    width: theme.spacing.unit * 9,
+    height: '100%',
+    position: 'absolute',
+    right: 0,
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   input: {
     font: 'inherit',
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit}px ${theme.spacing.unit}px ${theme.spacing.unit * 9}px`,
+    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 9}px ${theme.spacing.unit}px ${theme.spacing.unit * 9}px`,
     border: 0,
     display: 'block',
     verticalAlign: 'middle',

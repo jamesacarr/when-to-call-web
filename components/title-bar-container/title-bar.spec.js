@@ -4,7 +4,7 @@ import TitleBar from './title-bar';
 
 describe('<TitleBar/>', () => {
   describe('.render', () => {
-    it('renders correctly', () => {
+    it('renders correctly when not loading', () => {
       const classes = {
         root: 'root',
         wrapper: 'wrapper',
@@ -14,7 +14,21 @@ describe('<TitleBar/>', () => {
       const query = () => {};
       const setVisible = () => {};
 
-      const wrapper = shallow(<TitleBar classes={classes} query={query} setVisible={setVisible}/>);
+      const wrapper = shallow(<TitleBar classes={classes} loading={false} query={query} setVisible={setVisible}/>);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly when loading', () => {
+      const classes = {
+        root: 'root',
+        wrapper: 'wrapper',
+        search: 'search',
+        input: 'input'
+      };
+      const query = () => {};
+      const setVisible = () => {};
+
+      const wrapper = shallow(<TitleBar classes={classes} loading query={query} setVisible={setVisible}/>);
       expect(wrapper).toMatchSnapshot();
     });
   });
@@ -34,7 +48,7 @@ describe('<TitleBar/>', () => {
       query = jest.fn();
       setVisible = jest.fn();
 
-      wrapper = shallow(<TitleBar classes={classes} query={query} setVisible={setVisible}/>);
+      wrapper = shallow(<TitleBar classes={classes} loading={false} query={query} setVisible={setVisible}/>);
     });
 
     it('sets state value', () => {
