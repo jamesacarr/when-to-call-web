@@ -5,7 +5,7 @@ import { ListItem, ListItemText } from 'material-ui/List';
 
 const EmptyRow = () => (
   <ListItem dense>
-    <ListItemText primary="No Results"/>
+    <ListItemText primary="No Results" />
   </ListItem>
 );
 

@@ -12,8 +12,8 @@ window.google = {
       PlacesServiceStatus: {
         OK: 'OK',
         UNKNOWN_ERROR: 'UNKNOWN_ERROR',
-        ZERO_RESULTS: 'ZERO_RESULTS'
-      }
-    }
-  }
+        ZERO_RESULTS: 'ZERO_RESULTS',
+      },
+    },
+  },
 };

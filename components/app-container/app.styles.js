@@ -5,17 +5,17 @@ export default theme => ({
       MozOsxFontSmoothing: 'grayscale', // Antialiasing.
       // Change from `box-sizing: content-box` so that `width`
       // is not affected by `padding` or `border`.
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
     },
     '*, *::before, *::after': {
-      boxSizing: 'inherit'
+      boxSizing: 'inherit',
     },
     body: {
       margin: 0,
       background: theme.palette.background.default,
       '@media print': {
-        background: theme.palette.common.white
-      }
-    }
-  }
+        background: theme.palette.common.white,
+      },
+    },
+  },
 });

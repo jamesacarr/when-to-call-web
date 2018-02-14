@@ -2,47 +2,36 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TitleBar from './title-bar';
 
+const classes = {
+  root: 'root',
+  wrapper: 'wrapper',
+  search: 'search',
+  input: 'input',
+};
+
 describe('<TitleBar/>', () => {
   describe('.render', () => {
-    it('renders correctly when not loading', () => {
-      const classes = {
-        root: 'root',
-        wrapper: 'wrapper',
-        search: 'search',
-        input: 'input'
-      };
-      const performQuery = () => {};
-      const setVisible = () => {};
+    const performQuery = () => {};
+    const setVisible = () => {};
 
-      const wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading={false}/>);
+    it('renders correctly when not loading', () => {
+      const wrapper = shallow(
+        <TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} />
+      );
       expect(wrapper).toMatchSnapshot();
     });
 
     it('renders correctly when loading', () => {
-      const classes = {
-        root: 'root',
-        wrapper: 'wrapper',
-        search: 'search',
-        input: 'input'
-      };
-      const performQuery = () => {};
-      const setVisible = () => {};
-
-      const wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading/>);
+      const wrapper = shallow(
+        <TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading />
+      );
       expect(wrapper).toMatchSnapshot();
     });
 
     it('renders correctly when supplied query', () => {
-      const classes = {
-        root: 'root',
-        wrapper: 'wrapper',
-        search: 'search',
-        input: 'input'
-      };
-      const performQuery = () => {};
-      const setVisible = () => {};
-
-      const wrapper = shallow(<TitleBar classes={classes} query="testing" performQuery={performQuery} setVisible={setVisible} loading/>);
+      const wrapper = shallow(
+        <TitleBar classes={classes} query="testing" performQuery={performQuery} setVisible={setVisible} />
+      );
       expect(wrapper).toMatchSnapshot();
     });
   });
@@ -53,16 +42,10 @@ describe('<TitleBar/>', () => {
     let setVisible;
 
     beforeEach(() => {
-      const classes = {
-        root: 'root',
-        wrapper: 'wrapper',
-        search: 'search',
-        input: 'input'
-      };
       performQuery = jest.fn();
       setVisible = jest.fn();
 
-      wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading={false}/>);
+      wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} />);
     });
 
     it('calls setVisible with true when value', () => {

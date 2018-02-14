@@ -73,12 +73,6 @@ exports[`<TitleBar/> .render renders correctly when supplied query 1`] = `
         placeholder="Search for business"
         value="testing"
       />
-      <div>
-        <WithStyles(CircularProgress)
-          color="inherit"
-          size={25}
-        />
-      </div>
     </div>
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>

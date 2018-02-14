@@ -14,9 +14,14 @@ const ResultList = ({ classes, results, loading, visible, selectResult }) => {
     <Paper className={classes.root}>
       <List>
         {results.map((result, index) => (
-          <ResultRow key={result.id} result={result} divider={index !== results.length - 1} onClick={() => selectResult(result.id)}/>
+          <ResultRow
+            key={result.id}
+            result={result}
+            divider={index !== results.length - 1}
+            onClick={() => selectResult(result.id)}
+          />
         ))}
-        {results.length === 0 && <EmptyRow/>}
+        {results.length === 0 && <EmptyRow />}
       </List>
     </Paper>
   );
@@ -24,14 +29,16 @@ const ResultList = ({ classes, results, loading, visible, selectResult }) => {
 
 ResultList.propTypes = {
   classes: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
   results: PropTypes.array,
   selectResult: PropTypes.func.isRequired,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool,
 };
 
 ResultList.defaultProps = {
-  results: null
+  loading: false,
+  results: null,
+  visible: false,
 };
 
 export default ResultList;

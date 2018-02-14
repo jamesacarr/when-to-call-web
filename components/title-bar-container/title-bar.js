@@ -8,18 +8,22 @@ import SearchIcon from 'material-ui-icons/Search';
 class TitleBar extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired,
+    loading: PropTypes.bool,
     performQuery: PropTypes.func.isRequired,
     query: PropTypes.string.isRequired,
-    setVisible: PropTypes.func.isRequired
-  }
+    setVisible: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    loading: false,
+  };
 
   handleChange = ({ target: { value } }) => {
     const { performQuery, setVisible } = this.props;
 
     setVisible(Boolean(value));
     performQuery(value);
-  }
+  };
 
   render() {
     const { classes, loading, query } = this.props;
@@ -29,12 +33,17 @@ class TitleBar extends Component {
         <Toolbar>
           <div className={classes.wrapper}>
             <div className={classes.search}>
-              <SearchIcon/>
+              <SearchIcon />
             </div>
-            <input placeholder="Search for business" className={classes.input} value={query} onChange={this.handleChange}/>
+            <input
+              placeholder="Search for business"
+              className={classes.input}
+              value={query}
+              onChange={this.handleChange}
+            />
             {loading && (
               <div className={classes.loading}>
-                <CircularProgress color="inherit" size={25}/>
+                <CircularProgress color="inherit" size={25} />
               </div>
             )}
           </div>

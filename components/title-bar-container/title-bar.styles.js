@@ -10,26 +10,26 @@ export default theme => ({
     borderRadius: 2,
     background: fade(theme.palette.common.white, 0.15),
     '&:hover': {
-      background: fade(theme.palette.common.white, 0.25)
+      background: fade(theme.palette.common.white, 0.25),
     },
     '& $input': {
-      width: '100%'
+      width: '100%',
     },
     '& *::-webkit-input-placeholder': {
-      color: '#fff'
+      color: '#fff',
     },
     '& *:-moz-placeholder': {
-      color: '#fff'
+      color: '#fff',
     },
     '& *::-moz-placeholder': {
-      color: '#fff'
+      color: '#fff',
     },
     '& *:-ms-input-placeholder': {
-      color: '#fff'
-    }
+      color: '#fff',
+    },
   },
   title: {
-    float: 'left'
+    float: 'left',
   },
   search: {
     width: theme.spacing.unit * 9,
@@ -39,7 +39,7 @@ export default theme => ({
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   loading: {
     width: theme.spacing.unit * 9,
@@ -49,7 +49,7 @@ export default theme => ({
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   input: {
     font: 'inherit',
@@ -63,7 +63,7 @@ export default theme => ({
     color: 'inherit',
     'flex-grow': 1,
     '&:focus': {
-      outline: 0
-    }
-  }
+      outline: 0,
+    },
+  },
 });

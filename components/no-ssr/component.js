@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 
 class NoSSR extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node
-    ]).isRequired
-  }
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  };
 
   state = {
-    canRender: false
-  }
+    canRender: false,
+  };
 
   componentDidMount() {
     this.setState({ canRender: true });

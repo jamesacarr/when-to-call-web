@@ -4,7 +4,11 @@ import App from './app';
 
 describe('<App/>', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<App><div>Test</div></App>);
+    const wrapper = shallow(
+      <App>
+        <div>Test</div>
+      </App>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });

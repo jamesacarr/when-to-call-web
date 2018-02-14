@@ -33,7 +33,7 @@ export default BaseComponent => {
         <Provider store={store}>
           <MuiThemeProvider theme={this.styleContext.theme} sheetsManager={this.styleContext.sheetsManager}>
             <AppContainer>
-              <BaseComponent {...this.props}/>
+              <BaseComponent {...this.props} />
             </AppContainer>
           </MuiThemeProvider>
         </Provider>

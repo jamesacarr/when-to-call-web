@@ -6,8 +6,8 @@ import TitleBarContainer from '../components/title-bar-container';
 
 const Index = () => (
   <div>
-    <TitleBarContainer/>
-    <ResultListContainer/>
+    <TitleBarContainer />
+    <ResultListContainer />
   </div>
 );
 

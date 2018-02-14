@@ -6,7 +6,7 @@ import EmptyRow from './empty-row';
 
 describe('<EmptyRow/>', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<EmptyRow/>);
+    const wrapper = shallow(<EmptyRow />);
     expect(wrapper).toMatchSnapshot();
   });
 });
