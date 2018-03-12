@@ -10,23 +10,26 @@ class TitleBar extends Component {
     classes: PropTypes.object.isRequired,
     loading: PropTypes.bool,
     performQuery: PropTypes.func.isRequired,
-    query: PropTypes.string.isRequired,
-    setVisible: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     loading: false,
   };
 
-  handleChange = ({ target: { value } }) => {
-    const { performQuery, setVisible } = this.props;
+  state = {
+    query: '',
+  };
 
-    setVisible(Boolean(value));
+  handleChange = ({ target: { value } }) => {
+    const { performQuery } = this.props;
+
+    this.setState({ query: value });
     performQuery(value);
   };
 
   render() {
-    const { classes, loading, query } = this.props;
+    const { classes, loading } = this.props;
+    const { query } = this.state;
 
     return (
       <AppBar position="static">

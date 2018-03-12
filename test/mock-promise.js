@@ -1,10 +1,18 @@
 export default () => {
   const mock = jest.fn();
-  const promise = new Promise((resolve, reject) => {
-    mock.resolve = resolve;
-    mock.reject = reject;
+  mock.promises = [];
+
+  mock.mockImplementation(() => {
+    const promise = {};
+    promise.promise = new Promise((resolve, reject) => {
+      promise.resolve = resolve;
+      promise.reject = reject;
+    });
+
+    mock.promises.push(promise);
+
+    return promise.promise;
   });
-  mock.mockReturnValue(promise);
 
   return mock;
 };

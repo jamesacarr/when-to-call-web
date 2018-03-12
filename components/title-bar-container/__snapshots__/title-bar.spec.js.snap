@@ -53,27 +53,3 @@ exports[`<TitleBar/> .render renders correctly when not loading 1`] = `
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>
 `;
-
-exports[`<TitleBar/> .render renders correctly when supplied query 1`] = `
-<WithStyles(AppBar)
-  position="static"
->
-  <WithStyles(Toolbar)>
-    <div
-      className="wrapper"
-    >
-      <div
-        className="search"
-      >
-        <pure(Search) />
-      </div>
-      <input
-        className="input"
-        onChange={[Function]}
-        placeholder="Search for business"
-        value="testing"
-      />
-    </div>
-  </WithStyles(Toolbar)>
-</WithStyles(AppBar)>
-`;

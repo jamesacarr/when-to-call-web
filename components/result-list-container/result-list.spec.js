@@ -20,13 +20,6 @@ describe('<ResultList/>', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders null when loading', () => {
-    const wrapper = shallow(
-      <ResultList classes={classes} results={results} selectResult={selectResult} loading visible />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('renders results when visible and not loading', () => {
     const wrapper = shallow(<ResultList classes={classes} results={results} selectResult={selectResult} visible />);
     expect(wrapper).toMatchSnapshot();

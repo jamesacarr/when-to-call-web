@@ -5,10 +5,12 @@ import Paper from 'material-ui/Paper';
 import EmptyRow from './empty-row';
 import ResultRow from './result-row';
 
-const ResultList = ({ classes, results, loading, visible, selectResult }) => {
-  if (loading || !visible) {
+const ResultList = ({ classes, results, visible, selectResult }) => {
+  if (!visible) {
     return null;
   }
+
+  const selectResultById = id => () => selectResult(id);
 
   return (
     <Paper className={classes.root}>
@@ -18,7 +20,7 @@ const ResultList = ({ classes, results, loading, visible, selectResult }) => {
             key={result.id}
             result={result}
             divider={index !== results.length - 1}
-            onClick={() => selectResult(result.id)}
+            onClick={selectResultById(result.id)}
           />
         ))}
         {results.length === 0 && <EmptyRow />}
@@ -29,14 +31,12 @@ const ResultList = ({ classes, results, loading, visible, selectResult }) => {
 
 ResultList.propTypes = {
   classes: PropTypes.object.isRequired,
-  loading: PropTypes.bool,
   results: PropTypes.array,
   selectResult: PropTypes.func.isRequired,
   visible: PropTypes.bool,
 };
 
 ResultList.defaultProps = {
-  loading: false,
   results: null,
   visible: false,
 };

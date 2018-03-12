@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NoSSR from './component';
+import NoSSR from '.';
 
 describe('</NoSSR>', () => {
   let wrapper;

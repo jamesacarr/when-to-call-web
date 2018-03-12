@@ -15,22 +15,13 @@ describe('<TitleBar/>', () => {
     const setVisible = () => {};
 
     it('renders correctly when not loading', () => {
-      const wrapper = shallow(
-        <TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} />
-      );
+      const wrapper = shallow(<TitleBar classes={classes} performQuery={performQuery} setVisible={setVisible} />);
       expect(wrapper).toMatchSnapshot();
     });
 
     it('renders correctly when loading', () => {
       const wrapper = shallow(
-        <TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} loading />
-      );
-      expect(wrapper).toMatchSnapshot();
-    });
-
-    it('renders correctly when supplied query', () => {
-      const wrapper = shallow(
-        <TitleBar classes={classes} query="testing" performQuery={performQuery} setVisible={setVisible} />
+        <TitleBar classes={classes} performQuery={performQuery} setVisible={setVisible} loading />
       );
       expect(wrapper).toMatchSnapshot();
     });
@@ -45,21 +36,15 @@ describe('<TitleBar/>', () => {
       performQuery = jest.fn();
       setVisible = jest.fn();
 
-      wrapper = shallow(<TitleBar classes={classes} query="" performQuery={performQuery} setVisible={setVisible} />);
-    });
-
-    it('calls setVisible with true when value', () => {
+      wrapper = shallow(<TitleBar classes={classes} performQuery={performQuery} setVisible={setVisible} />);
       wrapper.instance().handleChange({ target: { value: 'abc' } });
-      expect(setVisible).toHaveBeenCalledWith(true);
     });
 
-    it('calls setVisible with false when no value', () => {
-      wrapper.instance().handleChange({ target: { value: '' } });
-      expect(setVisible).toHaveBeenCalledWith(false);
+    it('sets query', () => {
+      expect(wrapper.state('query')).toEqual('abc');
     });
 
     it('calls performQuery', () => {
-      wrapper.instance().handleChange({ target: { value: 'abc' } });
       expect(performQuery).toHaveBeenCalledWith('abc');
     });
   });

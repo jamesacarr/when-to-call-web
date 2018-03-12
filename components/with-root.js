@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { MuiThemeProvider } from 'material-ui/styles';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-import store from '../lib/store';
+import initStore from '../lib/store';
 import getContext from '../styles/get-context';
 import AppContainer from './app-container';
+
+const store = initStore();
 
 export default BaseComponent => {
   class WithRoot extends Component {

@@ -10,8 +10,6 @@ exports[`<ResultList/> renders empty state when no results 1`] = `
 </WithStyles(Paper)>
 `;
 
-exports[`<ResultList/> renders null when loading 1`] = `""`;
-
 exports[`<ResultList/> renders null when visible false 1`] = `""`;
 
 exports[`<ResultList/> renders results when visible and not loading 1`] = `
