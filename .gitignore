@@ -17,20 +17,17 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# nyc test coverage
-.nyc_output
-
 # Dependency directories
 node_modules/
 
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-
 # Next.js
 .next
+
+# Now secrets file
+now-secrets.json
 
 # VSCode
 .vscode

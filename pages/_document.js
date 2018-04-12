@@ -1,8 +1,14 @@
+/* eslint-disable react/no-danger */
+
 import React from 'react';
 import JssProvider from 'react-jss/lib/JssProvider';
+import htmlescape from 'htmlescape';
 import Document, { Head, Main, NextScript } from 'next/document';
 
 import getContext from '../styles/get-context';
+
+const { GOOGLE_API_KEY } = process.env;
+const env = { GOOGLE_API_KEY };
 
 export default class ExtendedDocument extends Document {
   static getInitialProps(ctx) {
@@ -46,10 +52,7 @@ export default class ExtendedDocument extends Document {
           <link rel="shortcut icon" href="/static/assets/favicon.ico" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-          <script
-            type="text/javascript"
-            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`}
-          />
+          <script dangerouslySetInnerHTML={{ __html: '__ENV__ = ' + htmlescape(env) }} />
         </Head>
         <body>
           <Main />
