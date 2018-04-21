@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OpeningHours renders correctly 1`] = `
+<WithStyles(TableRow)
+  className="row"
+>
+  <WithStyles(TableCell)
+    className="cell"
+    padding="none"
+  >
+    Sunday
+  </WithStyles(TableCell)>
+  <WithStyles(TableCell)
+    className="cell"
+    padding="none"
+  >
+    10:00AM
+     - 
+    02:00PM
+  </WithStyles(TableCell)>
+</WithStyles(TableRow)>
+`;
+
+exports[`OpeningHours renders nothing when no close 1`] = `""`;
+
+exports[`OpeningHours renders nothing when no intersection 1`] = `""`;
+
+exports[`OpeningHours renders nothing when no open 1`] = `""`;

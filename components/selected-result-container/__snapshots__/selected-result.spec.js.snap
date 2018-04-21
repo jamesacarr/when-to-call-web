@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedResult renders correctly 1`] = `
+<WithStyles(Card)
+  className="card"
+>
+  <WithStyles(CardHeader)
+    subheader="123 Fake St, Fakeville"
+    title="Testing"
+  />
+  <WithStyles(CardContent)>
+    <WithStyles(Typography)
+      gutterBottom={true}
+      variant="body1"
+    >
+      1234 5678
+    </WithStyles(Typography)>
+    <WithStyles(Typography)
+      variant="body2"
+    >
+      Call Between
+    </WithStyles(Typography)>
+    <WithStyles(Table)>
+      <WithStyles(TableBody)>
+        <WithStyles(OpeningHours)
+          data={
+            Object {
+              "close": Object {
+                "day": 1,
+                "time": "1700",
+              },
+              "open": Object {
+                "day": 1,
+                "time": "0900",
+              },
+            }
+          }
+          key="0"
+          offset={-240}
+        />
+        <WithStyles(OpeningHours)
+          data={
+            Object {
+              "close": Object {
+                "day": 2,
+                "time": "1600",
+              },
+              "open": Object {
+                "day": 2,
+                "time": "1000",
+              },
+            }
+          }
+          key="1"
+          offset={-240}
+        />
+      </WithStyles(TableBody)>
+    </WithStyles(Table)>
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;
+
+exports[`SelectedResult renders nothing when no result 1`] = `""`;
